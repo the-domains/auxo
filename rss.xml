@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[AUXO]]></title>
+        <description><![CDATA[AUXO]]></description>
+        <link>http://github.com/dylang/node-rss</link>
+        <generator>The Grid</generator>
+        <lastBuildDate>Wed, 23 Dec 2015 23:32:15 GMT</lastBuildDate>
+        <atom:link href="undefinedrss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[How to deploy a mobile server of meteor as container in docker]]></title>
+            <description><![CDATA[<article><h1>How to deploy a mobile server of meteor as container in docker</h1><p>There are different solutions to run a meteor app as container in docker, one solution that works pretty well is provided by meteorhacks, the only problem is that you can add the platform android because when the image is running will ask for the ANDROID_HOME env variable in the docker system, and installing and configuring all of that in a docker image is a tedious process you don’t want to do. So in this tutorial we will learn how to deploy a meteor app with some some inline commands as:</p></article>]]></description>
+            <link>undefinedhow-to-deploy-a-mobile-server-of-meteor-as-container-in-dock/index.html</link>
+            <guid isPermaLink="false">2cf01070-8e2d-455b-bfc2-0ffcb3a443b4</guid>
+            <pubDate>Wed, 23 Dec 2015 23:32:15 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
