@@ -1,0 +1,28 @@
+name: AUXO
+favicon: null
+layout_spectrum: 0.45499541354365647
+typography_spectrum: 0.22018357343040407
+cta:
+  domain: null
+  bucket: null
+  version: null
+analytics:
+  google: null
+  facebook: null
+  twitter: null
+opengraph:
+  image: null
+  type: null
+  appId: null
+color:
+  brandColors:
+    - '#9D2D3C'
+    - '#DDE4DD'
+    - '#BCAB47'
+    - '#6B574B'
+    - '#160600'
+  brandStrength: 0.27623877744190395
+  lightness: 0.6095977509394288
+  saturation: 0.089926014887169
+  rhythmicContrast: 0.2789419200271368
+purpose: []
