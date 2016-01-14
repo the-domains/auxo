@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>How to deploy a mobile server of meteor as container in docker - AUXO</title><link href="../rss.xml" title="AUXO feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.16.25"><meta name="the-grid-solution" content="7fbd7682-e86f-4ada-8bc3-36a8a6edfea8"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
+<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>How to deploy a mobile server of meteor as container in docker - AUXO</title><link href="../rss.xml" title="AUXO feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.3"><meta name="the-grid-solution" content="7a262ed9-85e2-49ac-a9fe-f85d84407d14"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
 @media (min-width: 15.6875em)and (max-width: 15.75em){	html{font-size:3.28125em !important}}
 @media (min-width: 15.8125em)and (max-width: 16.25em){	html{font-size:3.375em !important}}
 @media (min-width: 16.3125em)and (max-width: 16.6875em){html{font-size:3.46875em !important}}
@@ -202,6 +202,14 @@ body {
 }
 .stack {
   z-index: 1;
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+}
+.group,
+.aside,
+.decoration {
+  transition: transform 0.3s ease-out;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 picture {
   display: inline-block;
@@ -250,6 +258,9 @@ a:active {
   transition: color 0.1s ease-in, background-color 0.1s ease-out;
   -webkit-transition: color 0.1s ease-in, background-color 0.1s ease-out;
 }
+a.aside {
+  display: inline-block;
+}
 html.exporting a {
   transition: none;
 }
@@ -259,11 +270,21 @@ html.exporting a {
 .media > a {
   display: inline-block;
 }
+.media iframe {
+  transition: 0.3s opacity ease-in;
+  -webkit-transition: 0.3s opacity ease-in;
+}
 h1 a,
 h2 a,
 h3 a {
   font-weight: inherit;
   letter-spacing: inherit;
+}
+a {
+  -webkit-box-decoration-break: clone;
+  -ms-box-decoration-break: clone;
+  -moz-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 .text-decoration {
   -webkit-box-decoration-break: clone;
@@ -277,36 +298,50 @@ h3 a {
   margin-left: 1.5em;
 }
 .decoration {
-  position: relative;
   pointer-events: none;
+}
+.svg {
+  position: relative;
   background-color: currentColor;
 }
-.decoration > svg {
+.svg > svg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.decoration.connector > svg {
+.svg.connector > svg {
   width: 109%;
   height: 109%;
   margin-left: -2%;
 }
-.decoration path,
-.decoration ellipse,
-.decoration rect,
-.decoration polygon,
-.decoration circle {
+.svg path,
+.svg ellipse,
+.svg rect,
+.svg polygon,
+.svg circle {
   fill: currentColor;
 }
-.decoration mpath,
-.decoration line,
-.decoration polyline {
+.svg mpath,
+.svg line,
+.svg polyline {
   stroke: currentColor;
 }
-.svg.decoration {
+.svg {
   background-color: transparent;
+}
+.revealed .play.svg:after {
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  margin-top: -20px;
+  margin-left: -20px;
+  background-color: currentColor;
+  content: "";
 }
 .colors-style-aside-border .publisher,
 .colors-style-aside-border .author {
@@ -933,7 +968,7 @@ wbr.w1800{ display: block }
  #u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-3 {
 display: none;
 }
-}</style></head><body><div class="layout-system rust mobile" id="page-a1da9f4f-b51a-427b-886a-a3371fa3d131"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_medium_headline w_medium_title w_long_paragraph w_long_text layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-3-l-one"></div><style id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-color">body{background-color: rgba(24, 5, 34, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-nav"><div kind="group" index="heading" class="group heading group heading" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-nav-g-heading-t-headline-a">AUXO</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack textual i first_chapter w_headline w_title w_paragraph w_text w_separator w_decoration w_medium_headline w_medium_title w_long_paragraph w_long_text stack textual" itemid="815fac16-cd36-47c5-8983-67f77dfea685" itemtype="text" diff_index="4" index="textual" kind="stack" score="5.625" missed="0.375" tag="article" id="u-815fac16-cd36-47c5-8983-67f77dfea685"><div kind="group" index="textual" class="group textual group textual" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual"><h1 kind="title" index="headline" class="medium medium_headline medium_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual-t-headline"><span class="text-decoration" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual-t-headline-span">How to deploy a <wbr class="w480 w960"></wbr>mobile server <wbr class="w481 w961 w1799"></wbr>of <wbr class="w480 w960"></wbr>meteor as <wbr class="w1800"></wbr>container <wbr class="w480 w960"></wbr>in <wbr class="w481"></wbr>docker</span></h1><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual-t-paragraph"><p><span class="first-letter">T</span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>here are different solutions to run a meteor app as container <wbr class="w480 w960"></wbr>in docker, one solution that <wbr class="w481 w1799"></wbr>works <wbr class="w961"></wbr>pretty well is provided by <wbr class="w480 w960 w1800"></wbr>meteorhacks, the only problem is that you can add the <wbr class="w481 w1799"></wbr>platform <wbr class="w480 w960 w961"></wbr>android because when the image is running will ask for the <wbr class="w480 w960 w1800"></wbr>ANDROID_HOME env <wbr class="w481 w1799"></wbr>variable in the <wbr class="w961"></wbr>docker system, and <wbr class="w480 w960"></wbr>installing and configuring all of that in a docker image is a <wbr class="w480 w481 w1799"></wbr>tedious <wbr class="w960"></wbr>process <wbr class="w1800"></wbr>you <wbr class="w961"></wbr>don&#x2019;t want to do. So in this tutorial we will <wbr class="w480"></wbr>learn how <wbr class="w960"></wbr>to deploy a meteor app <wbr class="w481 w1799"></wbr>with some some inline <wbr class="w480 w961"></wbr>commands as:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>F</span>or download meteor you can do it in this link or use the <wbr class="w480 w960"></wbr>command for Mac and Linux:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>L</span>et&#x2019;s create a new project called meteor-mobile-server</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>W</span>hen the project is created run the next command in the <wbr class="w480"></wbr>terminal</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>T</span>he app will run in <a href="http://localhost:3000">localhost:3000</a> by default if you want to <wbr class="w480"></wbr>change <wbr class="w960"></wbr>that you have to add a env <wbr class="w481 w961 w1799"></wbr>variable called ROOT_URL=<wbr class="w480"></wbr>(value) <wbr class="w960 w1800"></wbr>Example:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>N</span>ow we&#x2019;re going to install docker, you can see the install option <wbr class="w480"></wbr>in <wbr class="w960"></wbr>this link.</p></div><div kind="decoration" index="separator" class="decoration separator decoration separator" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual-d-separator"></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="66f4744e-aaa1-45da-912a-21bf41e5fdf3" itemtype="text" diff_index="1" index="column" kind="stack" score="2.625" missed="0.375" tag="article" id="u-66f4744e-aaa1-45da-912a-21bf41e5fdf3"><div kind="group" index="column" class="group column group column" id="u-66f4744e-aaa1-45da-912a-21bf41e5fdf3-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-66f4744e-aaa1-45da-912a-21bf41e5fdf3-g-column-t-paragraph"><p><span class="first-letter">W</span>e&#x2019;re going to create two files one called Dockerfile in the root <wbr class="w480 w960"></wbr>folder of the prject, and the other <wbr class="w481 w961 w1799"></wbr>called <a href="http://meteor.sh">meteor.sh</a> in a new <wbr class="w480"></wbr>folder <wbr class="w960 w1800"></wbr>called deployenv/bin</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>I</span>n the Dockerfile we&#x2019;re going to add the next lines of code:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>I</span>n the deployenv/bin/<a href="http://meteor.sh">meteor.sh</a> you can add the following lines <wbr class="w480"></wbr>of <wbr class="w960"></wbr>code:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>W</span>e are setting the run variables as global env variables. Now we <wbr class="w480"></wbr>are <wbr class="w960"></wbr>going to build the app.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>O</span>nce the build is completed we&#x2019;re going to run the container <wbr class="w480 w960"></wbr>adding the global env variables.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-alternate-g-heading-t-headline-a">AUXO feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_medium_headline w_medium_title w_long_paragraph w_long_text layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-3-l-one"></div><style id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-color">body{background-color: rgba(24, 5, 34, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_medium_headline w_medium_title w_long_paragraph w_long_text layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-3-l-one"></div><style id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-color">body{background-color: rgba(24, 5, 34, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+}</style></head><body><div class="layout-system rust mobile" id="page-a1da9f4f-b51a-427b-886a-a3371fa3d131"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_medium_headline w_medium_title w_long_paragraph w_long_text layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-mobile-l-one-3-l-one"></div><style id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-color">body{background-color: rgba(24, 5, 34, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-nav"><div kind="group" index="heading" class="group heading group heading" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-nav-g-heading-t-headline"><a class="text-decoration" href="../index.html" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-nav-g-heading-t-headline-a">AUXO</a></h1></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_large chapter stack textual i first_chapter w_headline w_title w_paragraph w_text w_separator w_decoration w_medium_headline w_medium_title w_long_paragraph w_long_text stack textual" itemid="815fac16-cd36-47c5-8983-67f77dfea685" itemtype="text" diff_index="4" index="textual" kind="stack" score="1.625" missed="0.375" tag="article" id="u-815fac16-cd36-47c5-8983-67f77dfea685"><div kind="group" index="textual" class="group textual group textual" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual"><h1 kind="title" index="headline" class="medium medium_headline medium_title title headline vfld-leader title headline" specificity="0.25" itemprop="title" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual-t-headline"><span class="text-decoration" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual-t-headline-span">How to deploy a <wbr class="w480 w960"></wbr>mobile server <wbr class="w481 w961 w1799"></wbr>of <wbr class="w480 w960"></wbr>meteor as <wbr class="w1800"></wbr>container <wbr class="w480 w960"></wbr>in <wbr class="w481"></wbr>docker</span></h1><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual-t-paragraph"><p><span class="first-letter">T</span><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>here are different solutions to run a meteor app as container <wbr class="w480 w960"></wbr>in docker, one solution that <wbr class="w481 w1799"></wbr>works <wbr class="w961"></wbr>pretty well is provided by <wbr class="w480 w960 w1800"></wbr>meteorhacks, the only problem is that you can add the <wbr class="w481 w1799"></wbr>platform <wbr class="w480 w960 w961"></wbr>android because when the image is running will ask for the <wbr class="w480 w960 w1800"></wbr>ANDROID_HOME env <wbr class="w481 w1799"></wbr>variable in the <wbr class="w961"></wbr>docker system, and <wbr class="w480 w960"></wbr>installing and configuring all of that in a docker image is a <wbr class="w480 w481 w1799"></wbr>tedious <wbr class="w960"></wbr>process <wbr class="w1800"></wbr>you <wbr class="w961"></wbr>don&#x2019;t want to do. So in this tutorial we will <wbr class="w480"></wbr>learn how <wbr class="w960"></wbr>to deploy a meteor app <wbr class="w481 w1799"></wbr>with some some inline <wbr class="w480 w961"></wbr>commands as:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>F</span>or download meteor you can do it in this link or use the <wbr class="w480 w960"></wbr>command for Mac and Linux:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>L</span>et&#x2019;s create a new project called meteor-mobile-server</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>W</span>hen the project is created run the next command in the <wbr class="w480"></wbr>terminal</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>T</span>he app will run in <a href="http://localhost:3000">localhost:3000</a> by default if you want to <wbr class="w480"></wbr>change <wbr class="w960"></wbr>that you have to add a env <wbr class="w481 w961 w1799"></wbr>variable called ROOT_URL=<wbr class="w480"></wbr>(value) <wbr class="w960 w1800"></wbr>Example:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>N</span>ow we&#x2019;re going to install docker, you can see the install option <wbr class="w480"></wbr>in <wbr class="w960"></wbr>this link.</p></div><div kind="decoration" index="separator" class="decoration separator decoration separator" id="u-815fac16-cd36-47c5-8983-67f77dfea685-g-textual-d-separator"></div></div></article><article subject="chapter" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_stretch uninverted vertical collapsed full line_padding_aside_inside text_width_wider group_h_align_center text_align_left flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_article chapter stack column i last_chapter w_paragraph w_text w_long_paragraph w_long_text stack column" itemid="66f4744e-aaa1-45da-912a-21bf41e5fdf3" itemtype="text" diff_index="1" index="column" kind="stack" score="0.625" missed="0.375" tag="article" id="u-66f4744e-aaa1-45da-912a-21bf41e5fdf3"><div kind="group" index="column" class="group column group column" id="u-66f4744e-aaa1-45da-912a-21bf41e5fdf3-g-column"><div kind="text" index="paragraph" class="text-decoration long long_paragraph long_text text paragraph vfld-leader vfld-trailer text paragraph" specificity="0.25" itemprop="text" id="u-66f4744e-aaa1-45da-912a-21bf41e5fdf3-g-column-t-paragraph"><p><span class="first-letter">W</span>e&#x2019;re going to create two files one called Dockerfile in the root <wbr class="w480 w960"></wbr>folder of the prject, and the other <wbr class="w481 w961 w1799"></wbr>called <a href="http://meteor.sh">meteor.sh</a> in a new <wbr class="w480"></wbr>folder <wbr class="w960 w1800"></wbr>called deployenv/bin</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>I</span>n the Dockerfile we&#x2019;re going to add the next lines of code:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>I</span>n the deployenv/bin/<a href="http://meteor.sh">meteor.sh</a> you can add the following lines <wbr class="w480"></wbr>of <wbr class="w960"></wbr>code:</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>W</span>e are setting the run variables as global env variables. Now we <wbr class="w480"></wbr>are <wbr class="w960"></wbr>going to build the app.</p><p><span class="first-letter"><wbr class="w480 w481 w960 w961 w1799 w1800"></wbr>O</span>nce the build is completed we&#x2019;re going to run the container <wbr class="w480 w960"></wbr>adding the global env variables.</p></div></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-alternate-g-heading-t-headline"><a class="text-decoration" href="../rss.xml" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-alternate-g-heading-t-headline-a">AUXO feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_medium_headline w_medium_title w_long_paragraph w_long_text layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-desktop-l-one-3-l-one"></div><style id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-color">body{background-color: rgba(24, 5, 34, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="article" diff_index="0" index="one" class="layout one i w_headline w_title w_paragraph w_text w_separator w_decoration w_leader w_medium_headline w_medium_title w_long_paragraph w_long_text layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts colors-use-same-as-previous layout one i first_layout last_layout article layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-cinema-l-one-3-l-one"></div><style id="u-a1da9f4f-b51a-427b-886a-a3371fa3d131-color">body{background-color: rgba(24, 5, 34, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*! Hammer.JS - v1.1.3 - 2014-05-20
  * http://eightmedia.github.io/hammer.js
  *
@@ -1460,9 +1495,11 @@ global.Hamburger = require('./hamburger');
 
 global.Highlighter = require('./highlighter');
 
+global.Player = require('./player');
+
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
+},{"./animator":3,"./hamburger":4,"./highlighter":5,"./paginator":7,"./player":8,"hammerjs/hammer.min.js":1,"picturefill/dist/picturefill.min.js":2}],7:[function(require,module,exports){
 var appendPage, mainpage, page, ref, ref1, urls;
 
 page = require('./reflow');
@@ -1563,7 +1600,192 @@ module.exports = function() {
 };
 
 
-},{"./reflow":8}],8:[function(require,module,exports){
+},{"./reflow":9}],8:[function(require,module,exports){
+var Player, Youtube, iframe, revealed, rgb2hex;
+
+iframe = null;
+
+Youtube = null;
+
+Player = function(id, src, width, height, color, bg) {
+  if (src.indexOf('youtube') > -1) {
+    src += '&color=white&theme=light&modestbranding=1';
+  }
+  src = src.replace('COLOR', color).replace('BG', bg);
+  if (location.protocol !== 'https:') {
+    src = src.replace('https:', 'http:');
+  }
+  iframe = document.createElement('iframe');
+  iframe.id = id;
+  iframe.setAttribute('allowfullscreen', '');
+  iframe.src = src;
+  iframe.width = width;
+  iframe.height = height;
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.left = 0;
+  iframe.style.right = 0;
+  iframe.style.position = 'absolute';
+  iframe.style.opacity = 0.2;
+  iframe.onload = function() {
+    return iframe.style.opacity = 1;
+  };
+  return iframe;
+};
+
+revealed = null;
+
+Player.reveal = function(iframe) {
+  var diff, i, left, len, parent, play, ref, ref1, sibling, target, top, translateX, translateY;
+  while (target = (target || iframe).parentNode) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (target.parentNode.classList.contains('group')) {
+        parent = target.parentNode;
+      } else {
+        parent = target;
+      }
+      revealed = iframe;
+      play = parent.getElementsByClassName('play')[0];
+      left = target.offsetWidth - play.offsetLeft - play.offsetWidth;
+      top = -play.offsetTop;
+      play.style.webkitTransformOrigin = 'top right';
+      play.style.webkitTransform = 'translateX(' + left + 'px) translateY(' + top + 'px) scale(0.5)';
+      target.classList.add('revealed');
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        if (sibling.nodeType === 1 && sibling !== parent) {
+          translateX = translateY = null;
+          if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
+            translateX = -diff;
+          }
+          if ((diff = target.offsetLeft + target.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
+            if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
+              translateX = diff;
+            }
+          }
+          if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
+            translateY = -diff;
+          }
+          if ((diff = target.offsetTop + target.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
+            if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
+              translateY = diff;
+            }
+          }
+          if (Math.abs(translateX) > Math.abs(translateY)) {
+            sibling.style.webkitTransform = 'translateY(' + translateY + 'px)';
+          } else {
+            sibling.style.webkitTransform = 'translateX(' + translateX + 'px)';
+          }
+          console.log(translateX, translateY, sibling);
+        }
+      }
+    }
+  }
+};
+
+Player.hide = function(iframe) {
+  var i, len, parent, play, ref, ref1, sibling;
+  while (parent = (parent || iframe).parentNode) {
+    if ((ref = parent.classList) != null ? ref.contains('revealed') : void 0) {
+      parent.classList.remove('revealed');
+      if (parent.parentNode.classList.contains('group')) {
+        parent = parent.parentNode;
+      }
+      play = parent.getElementsByClassName('play')[0];
+      play.style.webkitTransform = '';
+      ref1 = parent.parentNode.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        sibling = ref1[i];
+        sibling.style.webkitTransform = '';
+      }
+    }
+  }
+  return revealed = null;
+};
+
+window.addEventListener('resize', function() {
+  return setTimeout(function() {
+    return requestAnimationFrame(function() {
+      if (revealed) {
+        if (revealed.offsetWidth) {
+          return Player.reveal(revealed);
+        } else {
+          return Player.stop(revealed);
+        }
+      }
+    });
+  }, 10);
+});
+
+Player.stop = function(iframe) {
+  var old;
+  old = iframe;
+  iframe.style.opacity = 0;
+  setTimeout(function() {
+    var ref;
+    return (ref = old.parentNode) != null ? ref.removeChild(old) : void 0;
+  }, 300);
+  Player.hide(iframe);
+  return iframe = null;
+};
+
+document.addEventListener('click', function(e) {
+  var bg, color, header, parent, play, ref, ref1, results, styles, target;
+  target = e.target;
+  results = [];
+  while (target) {
+    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
+      if (play = target.getElementsByClassName('play')[0]) {
+        if ((iframe != null ? iframe.parentNode : void 0) === target) {
+          Player.stop(iframe);
+        } else {
+          if (iframe) {
+            Player.stop(iframe);
+          }
+          color = bg = null;
+          header = (ref1 = target.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
+          parent = header || play;
+          while (parent) {
+            if (parent.nodeType === 1) {
+              styles = window.getComputedStyle(parent);
+              if (styles.color.indexOf('rgba') === -1 || !styles.color.match(/,\s*0\)/)) {
+                if (color == null) {
+                  color = styles.color;
+                }
+              }
+              if (styles['background-color'].indexOf('rgba') === -1 || !styles['background-color'].match(/,\s*0\)/)) {
+                if (bg == null) {
+                  bg = styles['background-color'];
+                }
+              }
+            }
+            parent = parent.parentNode;
+          }
+          iframe = Player(play.id + '-player', play.getAttribute('data-src'), play.getAttribute('data-width'), play.getAttribute('data-height'), rgb2hex(color), rgb2hex(bg));
+          target.appendChild(iframe);
+          Player.reveal(iframe);
+        }
+        e.preventDefault();
+        break;
+      }
+    }
+    results.push(target = target.parentNode);
+  }
+  return results;
+});
+
+rgb2hex = function(rgb) {
+  rgb = rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i);
+  if (rgb && rgb.length === 4) {
+    return ("0" + parseInt(rgb[1], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[2], 10).toString(16)).slice(-2) + ("0" + parseInt(rgb[3], 10).toString(16)).slice(-2);
+  }
+};
+
+window.exports = window.Player = Player;
+
+
+},{}],9:[function(require,module,exports){
 module.exports = {
   reflow: function(container) {
     var counter, heights, hidden, hole, holed, holes, i, id, ids, index, j, k, l, last, layout, layouts, len, len1, len2, len3, m, mutations, name, node, ref, ref1, ref2, stack, stacks;
@@ -1828,7 +2050,7 @@ module.exports = function(callback) {
   } else {
     protocol = '';
   }
-  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.4/gss.document.parser.js";
+  url = protocol + "//cdn.thegrid.io/gss/gss-document/1.2.8/gss.document.parser.js";
   if (location.toString().indexOf('//localhost:8080') > -1) {
     return module.exports.load(protocol + "//localhost:8080/node_modules/gss-document/dist/gss.document.parser.js", callback, function() {
       return module.exports.load(url, callback);
